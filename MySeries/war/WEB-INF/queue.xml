@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queue-entries>
+  <queue>
+    <name>images-import</name>
+    <rate>10/m</rate>
+  </queue>
+  
+    <queue>
+    <name>series-import</name>
+    <rate>10/m</rate>
+  </queue>
+</queue-entries>

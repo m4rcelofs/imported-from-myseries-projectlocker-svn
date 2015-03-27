@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='myseries'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.smartgwt.SmartGwt"/>
+  <inherits name="com.google.gwt.i18n.I18N"/>  
+  
+  <!-- smartGWT developer console -->
+  <inherits name="com.smartgwt.tools.SmartGwtTools"/> 
+  
+  
+  <!--  Inherits theme, otherwise uses default (Enterprise) -->
+  <!--  inherits name='com.smartclient.theme.enterpriseblue.EnterpriseBlue'/>   -->
+
+
+  <!-- Other module inherits                                      -->
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='se.kth.myseries.client.MySeriesEP'/>
+
+	
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client'/>
+  <source path='shared'/>
+
+</module>

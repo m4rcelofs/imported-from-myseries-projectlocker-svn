@@ -1,0 +1,10 @@
+<!-- Indices written at Wed, 13 Oct 2010 11:58:58 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 3 times in query history -->
+    <datastore-index kind="Season" ancestor="true" source="auto">
+        <property name="number" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

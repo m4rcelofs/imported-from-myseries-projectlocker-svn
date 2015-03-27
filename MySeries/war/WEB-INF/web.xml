@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://www.inf.ufsc.br/~marcelofs/files/web-app_2_3.dtd">
+
+<web-app>
+ 
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>seriesServlet</servlet-name>
+		<servlet-class>se.kth.myseries.server.series.SeriesServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>seriesServlet</servlet-name>
+		<url-pattern>/myseries/series</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>profilesServlet</servlet-name>
+		<servlet-class>se.kth.myseries.server.profiles.ProfilesServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>profilesServlet</servlet-name>
+		<url-pattern>/myseries/profiles</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>watchlistServlet</servlet-name>
+		<servlet-class>se.kth.myseries.server.watchlist.WatchlistServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>watchlistServlet</servlet-name>
+		<url-pattern>/myseries/watchlist</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>authServlet</servlet-name>
+		<servlet-class>se.kth.myseries.server.auth.facebook.FacebookAuthenticationServiceImpl</servlet-class>
+		<init-param>
+			<param-name>client_id</param-name>
+			<param-value>157981547561789</param-value>
+		</init-param>
+		<init-param>
+			<param-name>api_key</param-name>
+			<param-value>bbb82e22b74b68bd7897656c127c28d9</param-value>
+		</init-param>
+		<init-param>
+			<param-name>secret</param-name>
+			<param-value>f76cffdf2257315a5b3a562e67516155</param-value>
+		</init-param>
+		<init-param>
+			<param-name>graphAuthorizeURL1</param-name>
+			<!-- URL encoded -->
+			<param-value>https%3A%2F%2Fgraph.facebook.com%2Foauth%2Fauthorize%3Fclient_id%3DCLIENTID%26redirect_uri%3Dhttp%3A%2F%2Fmy-series.appspot.com%2Foauthredirect%26scope%3Duser_likes%2Cpublish_stream%26display%3Dpage</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>authServlet</servlet-name>
+		<url-pattern>/myseries/auth</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>deAuth</servlet-name>
+		<servlet-class>se.kth.myseries.server.auth.facebook.FacebookDeAuthServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>deAuth</servlet-name>
+		<url-pattern>/myseries/deauth</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>oAuthRedirectServlet</servlet-name>
+		<servlet-class>se.kth.myseries.server.auth.facebook.OAuthRedirect</servlet-class>
+		<init-param>
+			<param-name>graphAuthorizeURL2</param-name>
+			<!-- URL encoded -->
+			<param-value>http%3A%2F%2Fapps.facebook.com%2Fmyseries%2F</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>oAuthRedirectServlet</servlet-name>
+		<url-pattern>/oauthredirect</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>imagesServlet</servlet-name>
+		<servlet-class>se.kth.myseries.server.series.GetImageServlet</servlet-class>
+		<init-param>
+			<!-- 48h -->
+			<param-name>expires</param-name>
+			<param-value>172800000</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>imagesServlet</servlet-name>
+		<url-pattern>/myseries/image</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!--  admin servlets -->
+	<servlet>
+		<servlet-name>importTvDb</servlet-name>
+		<servlet-class>se.kth.myseries.server.admin.TheTVDBImporterServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>importTvDb</servlet-name>
+		<url-pattern>/admin/tvdbImport</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>importImages</servlet-name>
+		<servlet-class>se.kth.myseries.server.admin.ImagesImporterServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>importImages</servlet-name>
+		<url-pattern>/admin/importImages</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>seriesDatabaseCleaner</servlet-name>
+		<servlet-class>se.kth.myseries.server.admin.SeriesDatabaseCleanerServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>seriesDatabaseCleaner</servlet-name>
+		<url-pattern>/admin/cleanSeriesDatabase</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>clearCache</servlet-name>
+		<servlet-class>se.kth.myseries.server.admin.CacheFlusherServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>clearCache</servlet-name>
+		<url-pattern>/admin/clearCache</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>series-import-init</servlet-name>
+		<servlet-class>se.kth.myseries.server.admin.SeriesToImportParserInit</servlet-class>
+
+		<init-param>
+			<param-name>filename</param-name>
+			<param-value>WEB-INF/TESTseriesToImport.lst</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>series-import-init</servlet-name>
+		<url-pattern>/admin/initImport</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- initialization servlets -->
+	<servlet>
+		<servlet-name>log4j-init</servlet-name>
+		<servlet-class>se.kth.myseries.server.admin.Log4jInit</servlet-class>
+	<init-param>
+			<param-name>log4j-init-file</param-name>
+			<param-value>WEB-INF/log4j-config.xml</param-value>
+		</init-param>
+
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+
+
+
+	<!-- default page to serve -->
+	<welcome-file-list>
+		<welcome-file>MySeries.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- private urls -->
+	<security-constraint>
+        <web-resource-collection>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+</web-app>

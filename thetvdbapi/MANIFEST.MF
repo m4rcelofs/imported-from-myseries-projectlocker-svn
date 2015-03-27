@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+Created-By: 17.0-b17 (Sun Microsystems Inc.)
+Built-By: Marcelo
+Specification-Title: TheTVDB API
+Implementation-Version: 0000
+Implementation-Title: 2010-11-05 02:07:45
+

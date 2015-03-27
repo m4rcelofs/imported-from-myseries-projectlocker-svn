@@ -1,0 +1,15 @@
+- future: better customize the homepage
+- future: ads placement - after personal stuff
+- homepage too long?
+- tags cloud
+- import from orangotag
+- watchlist on the homepage?
+- news: blank text / configure button
+- profile: series list on your profile (currently watching, with pics)
+- contact on the bottom of the page
+	- common email (domain)
+	- suggestions
+- most used searches (series tab)
+- default categories on default tags
+- suggestion tab (far right corner)
+- mark series as watched with friends?

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes autoGenerate="true">
+    
+    <datastore-index kind="SeriesComment" ancestor="true" source="manual">
+        <property name="comments_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+    
+    <datastore-index kind="EpisodeComment" ancestor="true" source="manual">
+        <property name="comments_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+    
+    <datastore-index kind="Image" ancestor="true" source="manual">
+        <property name="bannerImages_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+    
+    <datastore-index kind="Series" ancestor="true" source="manual">
+        <property name="tvDbId" direction="asc"/>
+    </datastore-index>
+    
+    <datastore-index kind="Season" ancestor="true" source="manual">
+        <property name="number" direction="asc"/>
+    </datastore-index>
+    
+    <datastore-index kind="Episode" ancestor="true" source="manual">
+        <property name="number" direction="asc"/>
+    </datastore-index>
+    
+    <datastore-index kind="Episode" ancestor="false" source="manual">
+        <property name="series" direction="asc"/>
+        <property name="firstAired" direction="asc"/>
+    </datastore-index>
+    
+    
+    <datastore-index kind="MySeriesUser" ancestor="true" source="manual">
+        <property name="facebook_id" direction="asc"/>
+        <property name="id" direction="asc"/>
+    </datastore-index>
+    
+</datastore-indexes>
